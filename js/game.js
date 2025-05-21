@@ -6,6 +6,10 @@
 /* global Phaser */
 
 //* Game scene */
+
+import SplashScene from './scenes/splash.js';
+const splashScene = new SplashScene();
+
 const config = {
     type: Phaser.AUTO,
     width: 1920,
@@ -24,4 +28,9 @@ const config = {
 }
 
 const game = new Phaser.Game(config);
-console.log(game);
+
+
+//* Game scenes */
+game.scene.add('splashScene', splashScene);
+//* game title */
+game.scene.start('splashScene');
