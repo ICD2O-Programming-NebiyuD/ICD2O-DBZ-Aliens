@@ -1,14 +1,14 @@
 /* global phaser */
 // Created by: nebs
 // Created on: May 2025
-// This is the splash scene for the game
+// This is the Title scene for the game
 
 /**
  * This class is the splash scene for the game
  */
-class SplashScene extends Phaser.Scene {
+class TitleScene extends Phaser.Scene {
     constructor() {
-        super({ key: 'splashScene' });
+        super({ key: 'titleScene' });
     }
   
   
@@ -17,13 +17,13 @@ class SplashScene extends Phaser.Scene {
     }
   
     preload() {
-        console.log('Splash Scene');
+        console.log('Title Scene');
     }
   
-    create (data) { this.scene.switch('titleScene');
+    create (data) {
     }
   
     update (time, delta) { 
     }
   }
-    export default SplashScene
+    export default TitleScene
