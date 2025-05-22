@@ -7,7 +7,7 @@
 
 //* Game scene */
 
-import SplashScene from './scenes/splash.js';
+import SplashScene from './splashScene.js';
 const splashScene = new SplashScene();
 
 const config = {
