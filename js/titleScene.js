@@ -20,11 +20,11 @@ class TitleScene extends Phaser.Scene {
   
     preload() {
         console.log('Title Scene')
-        this.load.image('titleSceneBackground', 'assets/alien_screen_image2.jpg')
+        this.load.image('titleSceneBackground', 'assets/alien_screen_image.jpg')
     }
   
     create(data) {
-    this.titleSceneBackgroundImage = this.add.sprite(0, 0, 'titleSceneBackground')
+    this.titleSceneBackgroundImage = this.add.sprite(0, 0, 'titleSceneBackground').setScale(2.75)
     this.titleSceneBackgroundImage.x = 1920 / 2
     this.titleSceneBackgroundImage.y = 1080 / 2
     }
