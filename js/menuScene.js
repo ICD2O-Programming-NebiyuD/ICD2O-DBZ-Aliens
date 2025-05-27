@@ -8,7 +8,9 @@
  */
 class MenuScene extends Phaser.Scene {
     constructor() {
-        super({ key: 'menuScene' });
+        super({ key: 'menuScene' })
+            
+        this.menuSceneBackgroundImage = null;
     }
   
   
@@ -17,10 +19,14 @@ class MenuScene extends Phaser.Scene {
     }
   
     preload() {
-        console.log('Menu Scene');
+        console.log('Menu Scene')
+        this.load.image('menuSceneBackground', 'assets/alien_screen_image2.jpg');
     }
   
-    create (data) {
+    create(data) {
+    this.menuSceneBackgroundImage = this.add.sprite(0, 0, 'menuSceneBackground');
+    this.menuSceneBackgroundImage.x = 1920 / 2;
+    this.menuSceneBackgroundImage.y = 1080 / 2;
     }
   
     update (time, delta) { 
