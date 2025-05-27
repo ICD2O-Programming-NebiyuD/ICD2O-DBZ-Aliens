@@ -1,5 +1,5 @@
 /* global phaser */
-// Created by: nebs
+// Created by: abdul
 // Created on: May 2025
 // This is the Menu scene for the game
 
@@ -13,7 +13,7 @@ class MenuScene extends Phaser.Scene {
   
   
     init (data) {
-    this.cameras.main.setBackgroundColor("ffffff");
+    this.cameras.main.setBackgroundColor("AEA04B");
     }
   
     preload() {
