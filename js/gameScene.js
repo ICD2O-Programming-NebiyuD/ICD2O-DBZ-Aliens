@@ -16,8 +16,8 @@ class GameScene extends Phaser.Scene {
     }
   
   
-    init (data) {
-    this.cameras.main.setBackgroundColor("AEA04B");
+    init(data) {
+        this.cameras.main.setBackgroundColor("AEA04B");
     }
   
     preload() {
@@ -37,9 +37,9 @@ class GameScene extends Phaser.Scene {
         this.ship = this.physics.add.sprite(1920 / 2, 1080 - 100, 'ship')
 
         this.missileGroup = this.physics.add.group()
-       }
+    }
   
-    update(time, delta) { 
+    update(time, delta) {
         
         const keyLeftObj = this.input.keyboard.addKey('LEFT')
         const keyRightObj = this.input.keyboard.addKey('RIGHT')
@@ -91,6 +91,10 @@ class GameScene extends Phaser.Scene {
         if (keySpaceObj.isUp === true) {
             this.fireMissile = false
         }
+
+        this.missileGroup.children.each(function (item) {
+            item.y = item.y - 15
+        })
     }
-  }
+}    
     export default GameScene
