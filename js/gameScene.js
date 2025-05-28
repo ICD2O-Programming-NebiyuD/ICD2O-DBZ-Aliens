@@ -12,6 +12,7 @@ class GameScene extends Phaser.Scene {
     createAlien() {
         const alienXLocation = Math.floor(Math.random() * 1920) + 1
         const anAlien = this.physics.add.sprite(alienXLocation, 100, 'alien')
+        anAlien.body.velocity.y = 200
         this.alienGroup = add(anAlien)
     }
 
