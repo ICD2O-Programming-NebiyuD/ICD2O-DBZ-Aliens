@@ -1,5 +1,5 @@
 /* global phaser */
-// Created by: abdul
+// Created by: nebs
 // Created on: May 2025
 // This is the Game scene for the game
 
@@ -16,7 +16,7 @@ class GameScene extends Phaser.Scene {
         alienXVelocity *= Math.round(Math.random()) ? 1 : -1
         anAlien.body.velocity.y = 200
         anAlien.body.velocity.x = alienXVelocity
-        this.alienGroup = add(anAlien)
+        this.alienGroup.add(anAlien)
     }
 
     constructor() {
@@ -42,7 +42,7 @@ class GameScene extends Phaser.Scene {
         // sound
         this.load.audio('laser', 'assets/laser1.wav')
     }
-  
+
     create(data) {
         this.background = this.add.image(0, 0, 'starBackground').setScale(2.0)
         this.background.setOrigin(0, 0)
@@ -54,7 +54,7 @@ class GameScene extends Phaser.Scene {
         this.alienGroup = this.add.group()
         this.createAlien()
     }
-  
+
     update(time, delta) {
         
         const keyLeftObj = this.input.keyboard.addKey('LEFT')
