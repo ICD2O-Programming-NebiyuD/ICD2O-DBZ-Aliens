@@ -53,6 +53,12 @@ class GameScene extends Phaser.Scene {
 
         this.alienGroup = this.add.group()
         this.createAlien()
+
+        // overlap between missile and alien
+        this.physics.add.overlap(this.missileGroup, this.alienGroup, function (missileCollide, alienCollide) {
+            alienCollide.destroy()
+            missileCollide.destroy()
+        }.bind(this))
     }
 
     update(time, delta) {
