@@ -48,6 +48,7 @@ this.gameOverText = null
         // sound
         this.load.audio('laser', 'assets/laser1.wav')
         this.load.audio('explosion', 'assets/barrelExploding.wav')
+        this.load.audio('bomb', 'assets/bomb.wav')
     }
 
     create(data) {
