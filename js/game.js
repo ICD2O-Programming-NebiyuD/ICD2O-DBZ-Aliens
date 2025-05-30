@@ -1,6 +1,6 @@
 // This file is part of the  project
 // Copyright (C) 2025 
-// Made by Abdul
+// Made by Nebs
 // this is the phaser 3 configuration file
 
 /* global Phaser */
