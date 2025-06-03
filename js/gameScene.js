@@ -94,8 +94,9 @@ class GameScene extends Phaser.Scene {
             this.gameOverText.setInteractive({ useHandCursor: true })
             this.gameOverText.on('pointerdown', () => this.scene.restart())
         }.bind(this))
-        this.backgroundMusic = this.sound.add('backgroundMusic');
-    this.backgroundMusic.play({ loop: true });
+
+        this.backgroundMusic = this.sound.add('backgroundMusic', { loop: true, volume: 0.5 })
+        this.backgroundMusic.play()
     }
   
     update(time, delta) {
