@@ -158,7 +158,7 @@ class GameScene extends Phaser.Scene {
         this.alienGroup.children.each(function (alien) {
             // Example: move aliens or check bounds
             // alien.x = alien.x + alien.body.velocity.x
-            if (alien.x > 1920) {
+            if (alien.y > 1080) {
                 alien.x = 0
             }
         }, this)
