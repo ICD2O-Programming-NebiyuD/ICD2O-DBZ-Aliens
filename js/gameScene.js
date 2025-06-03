@@ -90,6 +90,9 @@ class GameScene extends Phaser.Scene {
             alienCollide.destroy()
             shipCollide.destroy()
             this.isGameOver = true
+            if (this.backgroundMusic) {
+                this.backgroundMusic.stop()
+            }
             this.gameOverText = this.add.text(1920 / 2, 1080 / 2, 'Game Over!\nClick to play again.', this.gameOverTextStyle).setOrigin(0.5)
             this.gameOverText.setInteractive({ useHandCursor: true })
             this.gameOverText.on('pointerdown', () => this.scene.restart())
@@ -158,6 +161,10 @@ class GameScene extends Phaser.Scene {
                 item.destroy()
             }
         })
+
+        if (this.isGameOver) {
+            return
+        }
     }
 }    
     export default GameScene
