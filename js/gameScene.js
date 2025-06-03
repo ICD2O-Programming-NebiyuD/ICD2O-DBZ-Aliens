@@ -159,7 +159,7 @@ class GameScene extends Phaser.Scene {
             // Example: move aliens or check bounds
             // alien.x = alien.x + alien.body.velocity.x
             if (alien.y > 1080) {
-                alien.x = 0
+                alien.y = 0
             }
         }, this)
     }
