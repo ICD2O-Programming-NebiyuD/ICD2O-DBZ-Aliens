@@ -50,7 +50,6 @@ class GameScene extends Phaser.Scene {
         this.load.audio('laser', 'assets/laser1.wav')
         this.load.audio('explosion', 'assets/barrelExploding.wav')
         this.load.audio('bomb', 'assets/bomb.wav')
-        this.load.audio('backgroundMusic', 'assets/backgroundMusic.mp3')
     }
   
     create(data) {
@@ -90,16 +89,10 @@ class GameScene extends Phaser.Scene {
             alienCollide.destroy()
             shipCollide.destroy()
             this.isGameOver = true
-            if (this.backgroundMusic) {
-                this.backgroundMusic.stop()
-            }
             this.gameOverText = this.add.text(1920 / 2, 1080 / 2, 'Game Over!\nClick to play again.', this.gameOverTextStyle).setOrigin(0.5)
             this.gameOverText.setInteractive({ useHandCursor: true })
             this.gameOverText.on('pointerdown', () => this.scene.restart())
         }.bind(this))
-
-        this.backgroundMusic = this.sound.add('backgroundMusic', { loop: true, volume: 0.5 })
-        this.backgroundMusic.play()
     }
   
     update(time, delta) {
@@ -160,11 +153,16 @@ class GameScene extends Phaser.Scene {
             if (item.y < 0) {
                 item.destroy()
             }
-        })
+        }, this)
 
-        if (this.isGameOver) {
-            return
-        }
+        this.alienGroup.children.each(function (alien) {
+            // Example: move aliens or check bounds
+            // alien.x = alien.x + alien.body.velocity.x
+            if (alien.x > 1920) {
+                alien.x = 0
+            }
+        }, this)
     }
-}    
-    export default GameScene
+}
+
+export default GameScene

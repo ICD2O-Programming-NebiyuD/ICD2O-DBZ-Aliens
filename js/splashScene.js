@@ -1,5 +1,5 @@
 /* global phaser */
-// Created by: abdul
+// Created by: nebz
 // Created on: May 2025
 // This is the splash scene for the game
 //nebs
