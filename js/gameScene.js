@@ -1,5 +1,5 @@
 /* global phaser */
-// Created by: Isaaq Simon
+// Created by: nebz
 // Created on: May 2025
 // This is the Game scene for the game
 
@@ -47,7 +47,7 @@ class GameScene extends Phaser.Scene {
         this.load.image('missile', 'assets/missile.png')
         this.load.image('alien', 'assets/alien.png')
         // sound
-        this.load.audio('laser', 'assets/laser1.wav')
+        this.load.audio('laser', 'assets/ki.mp3')
         this.load.audio('explosion', 'assets/barrelExploding.wav')
         this.load.audio('bomb', 'assets/bomb.wav')
     }
@@ -93,6 +93,8 @@ class GameScene extends Phaser.Scene {
             this.gameOverText.setInteractive({ useHandCursor: true })
             this.gameOverText.on('pointerdown', () => this.scene.restart())
         }.bind(this))
+        this.backgroundMusic = this.sound.add('backgroundMusic');
+    this.backgroundMusic.play({ loop: true });
     }
   
     update(time, delta) {
